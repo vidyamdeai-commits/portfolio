@@ -21,6 +21,7 @@ The site has been rebuilt in a **vibrant ed-tech style**. The owner approved the
 | Programme pages (5) | Done | 4 Indian photos (school, college, everyday, wellness heroes). Industry uses an illustration |
 | Book Workshop | Done | 1 Indian photo (above the "what's included" list, `sm` and up) |
 | How We Teach, Teach With Us, About | Built 11 Oct 2026 from the client's brochure and Business Bible | None yet |
+| Colleges & Students, For Industry, Creative Studio | Built 11 Oct 2026 for the four-division restructure (unratified, see `content-status.md`) | None yet |
 | Contact, Terms | Still "coming soon" pages | Later |
 
 `npm run typecheck`, `npm run lint` and `npm run build` all passed at the last update (21 pages built), and every page was checked at 360px, 768px and 1280px with no horizontal overflow. Nothing has been committed to git, and nothing has been deployed.
@@ -95,7 +96,8 @@ Work one page at a time, check it renders, then show the owner before moving on.
 
 1. **Show the owner the seven new photos in place,** on a phone as well as a desktop. They approved the sourcing method and the slot list, but have not yet seen the pages rendered.
 2. **Replace the three Home photos.** They are face-free but not India-set, and are now the only images on the site that fail the Indian-imagery rule. This is the largest remaining gap. `hero-laptop.webp` sits inside `HeroCollage`, so it needs more care than a `src` swap.
-3. **Contact and Terms** are the last two "coming soon" pages. Contact matters most: the Teach With Us call to action points at `/contact`, so a teacher who wants to apply currently lands on a placeholder. Either build Contact or give Teach With Us its own application form.
+3. **Contact is now urgent.** Every division page, Teach With Us and How We Teach route enquiries to `/contact`, which is still a placeholder. The restructure turned one dead-end into six.
+4. **Terms** is the other remaining "coming soon" page.
 4. **Photos for the three new pages.** How We Teach, Teach With Us and About have none. Same rules apply (India-set and face-free, or an illustration).
 5. **A founders section on About,** once bios and photos arrive. `Proposal.pdf` is **not** a usable source for these — see `docs/content-status.md`.
 

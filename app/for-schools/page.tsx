@@ -62,9 +62,88 @@ export default function ForSchoolsPage() {
         </Container>
       </section>
 
+      {/* The promise and the four differentiators, from the client's school deck. */}
+      <section className="py-16 sm:py-24">
+        <Container>
+          <div className="reveal rounded-[2rem] bg-navy-900 p-8 text-white sm:p-12">
+            <p className="font-display text-2xl font-extrabold leading-snug text-gold-300 sm:text-3xl">
+              {schools.promise.belief}
+            </p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-navy-100">{schools.promise.body}</p>
+            <ul className="mt-10 grid gap-5 sm:grid-cols-3">
+              {schools.promise.principles.map((pr, i) => (
+                <li key={pr.title} className="on-light rounded-3xl bg-white p-6 text-ink">
+                  <span className="label text-muted">0{i + 1}</span>
+                  <h3 className="mt-2 font-display text-xl font-bold text-navy-900">{pr.title}</h3>
+                  <p className="mt-2 leading-relaxed">{pr.body}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-9 font-display text-lg font-bold">{schools.promise.strapline}</p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container>
+          <SectionHeading
+            eyebrow="What makes us different"
+            title="A whole-child approach to the AI age"
+            body="A balanced programme where technology, character, health and creativity grow together."
+          />
+          <div className="mt-12">
+            <FeatureGrid items={schools.different} />
+          </div>
+        </Container>
+      </section>
+
       <section className="pb-16 sm:pb-24">
         <Container>
           <ThinkingHabit intro={thinkingHabit.intro} steps={thinkingHabit.steps} />
+        </Container>
+      </section>
+
+      <section className="bg-mint-100 py-16 sm:py-24">
+        <Container>
+          <SectionHeading
+            eyebrow="Beyond the classroom"
+            title="Make learning something students can show"
+            body="Students don't just finish lessons. They make, present, collaborate and improve."
+          />
+          <div className="mt-12">
+            <FeatureGrid items={schools.beyondClassroom} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container>
+          <SectionHeading
+            eyebrow="A partnership with your school"
+            title="Support for students, teachers and families"
+            body="Designed to complement your school's educational goals, not compete with them."
+          />
+          <div className="mt-12">
+            <FeatureGrid items={schools.partnership} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-cream-100 py-16 sm:py-24">
+        <Container>
+          <SectionHeading eyebrow="What success looks like" title={schools.success.title} body={schools.success.body} />
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {schools.success.items.map((item, i) => {
+              const t = toneAt(i);
+              return (
+                <li key={item.title} className={`reveal rounded-3xl p-7 ${t.bg}`}>
+                  <h3 className={`font-display text-xl font-bold ${t.text}`}>{item.title}</h3>
+                  <p className="mt-2.5 leading-relaxed text-ink/80">{item.body}</p>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-8 text-center text-muted">{schools.success.note}</p>
         </Container>
       </section>
 

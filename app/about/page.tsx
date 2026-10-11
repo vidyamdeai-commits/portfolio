@@ -13,7 +13,7 @@ import { about, site } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Vidyam deAi teaches AI, automation and data skills from Class 5 through college and working life, with mental wellbeing built into the programme.",
+    "Vidyam deAi teaches AI, automation and data skills from Class 6 through college and working life, with mental wellbeing built into the programme.",
 };
 
 export default function AboutPage() {

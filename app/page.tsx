@@ -12,7 +12,11 @@ import { ButtonLink } from "@/components/shared/button-link";
 import { Container } from "@/components/shared/container";
 import { JsonLd } from "@/components/shared/json-ld";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { automationTools, getProgramme, getProgrammes, home, site, strands } from "@/lib/content";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Icon } from "@/components/shared/icon";
+import { automationTools, divisions, divisionsNote, getProgramme, getProgrammes, home, site, strands } from "@/lib/content";
+import { toneAt } from "@/lib/theme";
 
 export default function HomePage() {
   const school = getProgramme("school");
@@ -30,6 +34,43 @@ export default function HomePage() {
         }}
       />
       <Hero {...home.hero} primary={site.primaryCta} aside={<HeroCollage badge={home.offer} />} />
+
+      {/* The four divisions. One brand, four distinct audiences. */}
+      <section className="py-16 sm:py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="Four ways we help"
+            title="One brand, four clear divisions"
+            body={divisionsNote}
+          />
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {divisions.map((d, i) => {
+              const t = toneAt(i);
+              return (
+                <li key={d.href} className="reveal">
+                  <Link
+                    href={d.href}
+                    className="group flex h-full flex-col rounded-3xl bg-white p-7 shadow-card ring-1 ring-navy-900/5 transition duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+                  >
+                    <span className={`flex size-14 items-center justify-center rounded-2xl ${t.bg} ${t.text}`}>
+                      <Icon name={d.icon} className="size-7" />
+                    </span>
+                    <span className="mt-6 font-display text-xl font-bold leading-snug text-navy-900">{d.title}</span>
+                    <span className="mt-2.5 flex-1 leading-relaxed text-ink/80">{d.body}</span>
+                    <span className="label mt-5 block text-muted">{d.customers}</span>
+                    <span className="mt-5 inline-flex items-center gap-2 font-display text-sm font-bold text-navy-900">
+                      {d.cta}
+                      <span className="flex size-7 items-center justify-center rounded-full bg-gold-400 text-navy-950 transition-transform duration-300 group-hover:translate-x-1.5">
+                        <ArrowRight className="size-3.5" aria-hidden="true" />
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </Container>
+      </section>
 
       <section className="py-16 sm:py-20">
         <Container>
@@ -129,7 +170,7 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="One learning path"
-            title="From Class 5 to college and career"
+            title="From Class 6 to college and career"
             body="Beyond schools, we teach college students, professionals and families, and run a dedicated programme for mental health and mindfulness."
           />
           <div className="mt-12">

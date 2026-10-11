@@ -1,9 +1,14 @@
 import type { Feature, Step } from "@/lib/content/types";
 
+/**
+ * The homepage now speaks to all four divisions, so the headline is the brand
+ * positioning rather than the school pitch. The primary call to action is still the
+ * free school workshop, which remains the main conversion.
+ */
 export const hero = {
-  eyebrow: "For schools · Classes 6 to 12",
-  title: "Future-ready students, with a healthy mind and body",
-  body: "AI, automation and database skills taught by people who use them at work, plus wellbeing, fitness and nutrition powered by AI.",
+  eyebrow: "Knowledge · Intelligence · Future",
+  title: "Human intelligence first, AI for a better future",
+  body: "Learn, innovate, create and grow with responsible artificial intelligence — from school learning and college projects to business solutions and creative content.",
   secondary: { label: "See what students learn", href: "/for-schools" },
 };
 

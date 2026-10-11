@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { nav, site } from "@/lib/content";
+import { footerSections, site } from "@/lib/content";
 import { Container } from "@/components/shared/container";
 import { Placeholder } from "@/components/shared/placeholder";
 
 const linkClass = "inline-flex min-h-11 items-center text-navy-100 transition-colors hover:text-gold-300 lg:min-h-9";
 
 export function Footer() {
-  const programmes = nav.find((n) => n.children)?.children ?? [];
   const contacts = [
     { label: "Email", value: site.email, icon: Mail },
     { label: "Phone", value: site.phone, icon: Phone },
@@ -25,37 +24,22 @@ export function Footer() {
             <p className="label mt-4 text-gold-300">{site.tagline}</p>
             <p className="mt-5 max-w-sm leading-relaxed">{site.description}</p>
           </div>
-          <div className="lg:col-span-3 lg:col-start-6">
-            <h2 className="font-display text-lg font-bold text-white">Programmes</h2>
-            <ul className="mt-3">
-              {programmes.map((p) => (
-                <li key={p.href}>
-                  <Link href={p.href} className={linkClass}>
-                    {p.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="lg:col-span-2">
-            <h2 className="font-display text-lg font-bold text-white">Explore</h2>
-            <ul className="mt-3">
-              {nav
-                .filter((n) => !n.children)
-                .map((n) => (
-                  <li key={n.href}>
-                    <Link href={n.href} className={linkClass}>
-                      {n.label}
+          {/* The four-division nav has no room for the individual programmes, so the
+              footer is what keeps every page reachable. See content/site.ts. */}
+          {footerSections.map((section, i) => (
+            <div key={section.title} className={i === 0 ? "lg:col-span-3 lg:col-start-6" : "lg:col-span-2"}>
+              <h2 className="font-display text-lg font-bold text-white">{section.title}</h2>
+              <ul className="mt-3">
+                {section.links.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className={linkClass}>
+                      {l.label}
                     </Link>
                   </li>
                 ))}
-              <li>
-                <Link href="/contact" className={linkClass}>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+              </ul>
+            </div>
+          ))}
           <div className="sm:col-span-2 lg:col-span-3">
             <h2 className="font-display text-lg font-bold text-white">Get in touch</h2>
             <ul className="mt-4 space-y-3">

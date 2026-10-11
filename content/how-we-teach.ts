@@ -51,7 +51,7 @@ export const formats: Feature[] = [
 export const included = [
   "Hands-on projects in every module",
   "Mentor support and doubt-clearing sessions",
-  "Progress reports for parents and schools",
+  "Monthly progress reports for parents and schools",
   "A verified certificate on completion",
   "A project portfolio on GitHub (technology tracks)",
   "Access to the learning portal and session recordings",
@@ -77,7 +77,7 @@ export const inTheClassroom: Feature[] = [
   {
     icon: "chart",
     title: "Reported back to you",
-    body: "Schools and parents get a progress report at the end of the term, and eligible learners get a certificate.",
+    body: "Schools and parents get a clear monthly update on participation, learning and projects, and eligible learners get a certificate at the end.",
   },
 ];
 

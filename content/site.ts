@@ -16,18 +16,37 @@ export const site: SiteConfig = {
 
 export const nav: NavItem[] = [
   { label: "For Schools", href: "/for-schools" },
+  { label: "Colleges & Students", href: "/for-colleges" },
+  { label: "For Industry", href: "/for-industry" },
+  { label: "Creative Studio", href: "/creative-studio" },
+  { label: "About", href: "/about" },
+];
+
+/**
+ * The footer, not the nav, is what keeps every page reachable. The four-division nav
+ * has no room for the individual programmes, How We Teach or Teach With Us, so they
+ * live here. AI for Everyday Life and Mind & Wellness stay live at their own URLs
+ * (owner decision, 11 Oct 2026) even though they are no longer top-level.
+ */
+export const footerSections: { title: string; links: NavItem[] }[] = [
   {
-    label: "Programmes",
-    href: "/programmes",
-    children: [
-      { label: "School (Class 5 to 12)", href: "/programmes/school" },
+    title: "Programmes",
+    links: [
+      { label: "School (Class 6 to 12)", href: "/programmes/school" },
       { label: "College", href: "/programmes/college" },
       { label: "Industry", href: "/programmes/industry" },
       { label: "AI for Everyday Life", href: "/programmes/everyday-ai" },
       { label: "Mind & Wellness", href: "/programmes/mind-and-wellness" },
+      { label: "All programmes", href: "/programmes" },
     ],
   },
-  { label: "How We Teach", href: "/how-we-teach" },
-  { label: "Teach With Us", href: "/teach-with-us" },
-  { label: "About", href: "/about" },
+  {
+    title: "Explore",
+    links: [
+      { label: "How We Teach", href: "/how-we-teach" },
+      { label: "Teach With Us", href: "/teach-with-us" },
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];

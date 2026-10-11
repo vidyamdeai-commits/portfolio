@@ -10,7 +10,7 @@ import type { Cta, Feature, Step } from "@/lib/content/types";
 export const hero = {
   eyebrow: "Teach with us",
   title: "Teach the subject you actually work in",
-  body: "We are building a pool of teachers who can take AI, computer science, data and wellbeing to students across Classes 5 to 12, in colleges and in professional batches. If you build these things at work, or you teach them well, we would like to hear from you.",
+  body: "We are building a pool of teachers who can take AI, computer science, data and wellbeing to students across Classes 6 to 12, in colleges and in professional batches. If you build these things at work, or you teach them well, we would like to hear from you.",
   secondary: { label: "See what we teach", href: "/programmes" } satisfies Cta,
 };
 

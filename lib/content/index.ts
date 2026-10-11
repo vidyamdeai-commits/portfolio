@@ -6,12 +6,14 @@ import { programmes } from "@/content/programmes";
 import type { Programme } from "./types";
 
 export * from "./types";
-export { site, nav } from "@/content/site";
+export { site, nav, footerSections } from "@/content/site";
 export * as home from "@/content/home";
 export * as schools from "@/content/schools";
 export * as howWeTeach from "@/content/how-we-teach";
 export * as teachWithUs from "@/content/teach-with-us";
 export * as about from "@/content/about";
+export { divisions, positioning, note as divisionsNote } from "@/content/divisions";
+export type { Division } from "@/content/divisions";
 export { strands, automationTools, thinkingHabit } from "@/content/strands";
 export { schoolFaqs } from "@/content/faqs";
 

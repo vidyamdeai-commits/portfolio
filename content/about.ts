@@ -10,7 +10,7 @@ import type { Cta, Feature } from "@/lib/content/types";
 export const hero = {
   eyebrow: "About us",
   title: "Teaching India's students to use AI well, not just quickly",
-  body: "Vidyam deAi teaches AI, automation and data skills from Class 5 through college and into working life, with mental wellbeing built into the programme rather than bolted on. We are new, and we would rather tell you exactly what we are than claim more than we have.",
+  body: "Vidyam deAi teaches AI, automation and data skills from Class 6 through college and into working life, with mental wellbeing built into the programme rather than bolted on. We are new, and we would rather tell you exactly what we are than claim more than we have.",
   secondary: { label: "See the programmes", href: "/programmes" } satisfies Cta,
 };
 
@@ -56,7 +56,7 @@ export const values: Feature[] = [
 
 export const doing = {
   title: "What we teach",
-  body: "One learning path, five programmes: school computer science and AI from Class 5 to 12, two college tracks, industry specialisations for working professionals, practical AI for everyday life, and a dedicated Mind & Wellness programme.",
+  body: "One learning path, five programmes: school computer science and AI from Class 6 to 12, two college tracks, industry specialisations for working professionals, practical AI for everyday life, and a dedicated Mind & Wellness programme.",
 };
 
 /** Deliberately honest about what is not settled yet. */

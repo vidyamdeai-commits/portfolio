@@ -32,7 +32,7 @@ export default function ProgrammesPage() {
               ))}
             </h1>
             <p className="enter mt-6 max-w-2xl text-lg leading-relaxed text-navy-100 [--d:2]">
-              One learning path from Class 5 to college and career: hands-on computer science and AI, industry-ready
+              One learning path from Class 6 to college and career: hands-on computer science and AI, industry-ready
               domain skills, AI coaching for everyday life, and a dedicated programme for mental health and mindfulness.
             </p>
           </div>
