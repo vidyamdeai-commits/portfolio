@@ -1,0 +1,78 @@
+import type { Programme } from "@/lib/content/types";
+
+export const school: Programme = {
+  slug: "school",
+  vertical: "school",
+  number: "01",
+  title: "AI & Computer Science, Class 5 to 12",
+  shortTitle: "School",
+  audience: "Students from Class 5 to Class 12",
+  summary: "Four levels, from block coding to building AI apps.",
+  intro:
+    "A step-by-step path that complements school-board computer science and AI syllabi. Delivered in school, after school or online.",
+  modules: [
+    {
+      code: "Level 1 · Explorers",
+      badge: "Class 5–6",
+      title: "How computers and AI work around us",
+      topics: [
+        "How computers and the internet work",
+        "Block coding with Scratch",
+        "Logic, patterns and puzzles",
+        "AI around us: voice, maps, recommendations",
+        "Typing, files and digital basics",
+        "Safe, kind and smart online behaviour",
+        "Project: train a simple image-recognition model to sort fruits or animals",
+      ],
+    },
+    {
+      code: "Level 2 · Builders",
+      badge: "Class 7–8",
+      title: "Python, data and first apps",
+      topics: [
+        "Python fundamentals",
+        "Data, tables and charts",
+        "How machines learn from examples",
+        "Writing good prompts for AI tools",
+        "App building with MIT App Inventor",
+        "Spotting fakes, deepfakes and misinformation",
+        "Project: a chatbot that answers questions about your school",
+      ],
+    },
+    {
+      code: "Level 3 · Innovators",
+      badge: "Class 9–10",
+      title: "Machine learning and the web",
+      topics: [
+        "Python with pandas and matplotlib",
+        "Machine learning: regression and classification",
+        "Computer vision and language AI basics",
+        "Generative AI and how it works",
+        "Web basics: HTML, CSS, JavaScript",
+        "AI ethics, bias and data privacy",
+        "Project: a mini ML web app, such as predicting crop yield or study time",
+      ],
+    },
+    {
+      code: "Level 4 · Creators",
+      badge: "Class 11–12",
+      title: "Databases, LLMs and AI agents",
+      topics: [
+        "SQL databases: MySQL and PostgreSQL",
+        "Cloud data platforms: Databricks and Snowflake",
+        "ML with scikit-learn; deep learning intro",
+        "LLMs, prompt engineering and RAG",
+        "Build an AI agent that uses tools",
+        "Career guidance: CS, AI and data degrees",
+        "Capstone: a deployed AI app and GitHub portfolio for college applications",
+      ],
+    },
+  ],
+  outcomes: ["Projects in every module", "Term test", "Progress report for parents", "Certificate on completion"],
+  formats: ["In-school programme", "After-school and weekend batches", "Online live classes"],
+  duration: null,
+  batchSize: null,
+  fee: null,
+  heroImage: "/images/school-corridor-bihar.webp",
+  cta: { label: "Book a free demo class", href: "/contact?interest=school" },
+};

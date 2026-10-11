@@ -1,0 +1,40 @@
+import type { Programme } from "@/lib/content/types";
+
+export const college: Programme = {
+  slug: "college",
+  vertical: "college",
+  number: "02",
+  title: "Two tracks, one goal: job-ready with AI",
+  shortTitle: "College",
+  audience: "Engineering and general graduates",
+  summary: "LLMs, agentic AI and automation; AI for every degree.",
+  intro:
+    "An Engineering track for B.Tech, BE, BCA and MCA students, and a General Graduate track for BA, BCom, BSc and BBA students that needs no coding.",
+  modules: [
+    { code: "E1", title: "Programming foundations", topics: ["Python, TypeScript, intro to Go and Rust", "Git", "SQL databases (MySQL, PostgreSQL)"] },
+    { code: "E2", title: "Math and machine learning", topics: ["Linear algebra, probability", "scikit-learn", "Model evaluation"] },
+    { code: "E3", title: "Deep learning", topics: ["PyTorch, CNNs, transformers", "Vision and speech models"] },
+    { code: "E4", title: "LLM engineering", topics: ["Prompting, embeddings, RAG", "Fine-tuning, evaluation and guardrails"] },
+    { code: "E5", title: "Agentic AI", badge: "Flagship", topics: ["Tool use, MCP servers", "Multi-agent workflows", "AGENTS.md and skills"] },
+    { code: "E6", title: "Automation engineering", topics: ["Workflow and test automation", "APIs, scripting", "LLM pipelines end to end"] },
+    { code: "E7", title: "Data platforms and MLOps", topics: ["Databricks, Snowflake", "Docker, CI/CD", "Deployment and monitoring basics"] },
+    { code: "E8", title: "Security and responsible AI", topics: ["Prompt injection, data privacy", "Bias, AI governance"] },
+    { code: "G1", title: "AI literacy", topics: ["What AI can and cannot do", "Using chat assistants well and safely"] },
+    { code: "G2", title: "Prompting for work", topics: ["Writing, research, summarising, emails and reports with AI"] },
+    { code: "G3", title: "Data and Excel to insights", topics: ["Spreadsheets, dashboards, Power BI basics", "AI-assisted analysis"] },
+    { code: "G4", title: "No-code automation", topics: ["Automate forms, email and office tasks with AI workflow tools"] },
+    { code: "G5", title: "AI by subject", topics: ["Commerce: finance and accounting", "Arts: content and media", "Science: lab data"] },
+    { code: "G6", title: "Career launchpad", topics: ["AI-assisted resume and LinkedIn", "Interview practice, portfolio"] },
+  ],
+  outcomes: [
+    "Engineering capstone: build and deploy a multi-agent system for a real business process",
+    "Engineering roles: AI engineer, ML engineer, automation engineer, data scientist",
+    "General roles: business analyst, AI operations associate, digital marketer, data analyst, content specialist",
+  ],
+  formats: ["College bootcamps on campus", "Intensive workshops"],
+  duration: null,
+  batchSize: null,
+  fee: null,
+  heroImage: "/images/college-campus-india.webp",
+  cta: { label: "Enquire about college programmes", href: "/contact?interest=college" },
+};
