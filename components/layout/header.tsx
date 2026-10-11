@@ -9,7 +9,7 @@ import { Icon } from "@/components/shared/icon";
 import { toneAt } from "@/lib/theme";
 
 const linkClass =
-  "inline-flex min-h-11 items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 font-display text-[0.95rem] font-semibold text-navy-900 transition-colors hover:bg-sky-100";
+  "inline-flex min-h-11 items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 font-display text-[0.9rem] font-semibold text-navy-900 transition-colors hover:bg-sky-100 2xl:px-3.5 2xl:text-[0.95rem]";
 
 const childIcons = ["school", "college", "industry", "everyday", "wellness"];
 
@@ -39,7 +39,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-1 xl:flex">
+        <nav aria-label="Main" className="hidden items-center gap-0.5 xl:flex 2xl:gap-1">
           {nav.map((item) =>
             item.children ? (
               <div key={item.href} className="group relative">
@@ -77,7 +77,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto hidden md:block xl:ml-0">
-          <ButtonLink href={site.primaryCta.href} className="min-h-11 px-5 py-2 shadow-[0_4px_0_0_var(--color-gold-700)]">
+          <ButtonLink href={site.primaryCta.href} className="min-h-11 whitespace-nowrap px-5 py-2 shadow-[0_4px_0_0_var(--color-gold-700)]">
             {site.primaryCta.label}
           </ButtonLink>
         </div>

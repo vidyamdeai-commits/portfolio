@@ -15,6 +15,7 @@ export const site: SiteConfig = {
 };
 
 export const nav: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "For Schools", href: "/for-schools" },
   { label: "Colleges & Students", href: "/for-colleges" },
   { label: "For Industry", href: "/for-industry" },
