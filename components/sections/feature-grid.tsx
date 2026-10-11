@@ -2,10 +2,19 @@ import { Icon } from "@/components/shared/icon";
 import type { Feature } from "@/lib/content";
 import { toneAt } from "@/lib/theme";
 
-/** Icon-led colour tiles. On navy sections the tiles are white cards with tinted icon chips. */
+/**
+ * Icon-led colour tiles. On navy sections the tiles are white cards with tinted icon chips.
+ *
+ * The column count follows the number of tiles: four normally, three when the count
+ * divides evenly by three but not four, so six tiles read as 3 + 3 rather than 4 + 2.
+ */
 export function FeatureGrid({ items, tone = "light" }: { items: Feature[]; tone?: "light" | "dark" }) {
+  const columns = items.length % 4 === 0 || items.length % 3 !== 0 ? 4 : 3;
   return (
-    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <ul
+      className="grid gap-5 sm:grid-cols-2 lg:grid-cols-[repeat(var(--cols),minmax(0,1fr))]"
+      style={{ "--cols": columns } as React.CSSProperties}
+    >
       {items.map((f, i) => {
         const t = toneAt(tone === "dark" ? i + 1 : i);
         return (
