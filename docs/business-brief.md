@@ -27,3 +27,4 @@ Enrolment: free demo/counselling → level check → enrol.
 2. Parents → demo class
 3. Trainers → apply
 4. College students, 5. professionals/adults, 6. institutions/CSR → enquire
+
