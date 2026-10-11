@@ -5,7 +5,8 @@ export type Lead = { type: "workshop" | "enquiry" | "teach"; data: Record<string
 /**
  * Sends a lead to every configured destination. A failing destination is logged,
  * not thrown, so one outage never loses the lead.
- * Env: SHEETS_WEBHOOK_URL (Google Apps Script web app), RESEND_API_KEY + LEAD_NOTIFY_EMAIL.
+ * Env: SHEETS_WEBHOOK_URL + SHEETS_WEBHOOK_TOKEN (Google Apps Script web app),
+ * RESEND_API_KEY + LEAD_NOTIFY_EMAIL. See docs/lead-delivery.md.
  */
 export async function deliverLead(lead: Lead): Promise<{ delivered: number; failed: number }> {
   const tasks: Promise<unknown>[] = [];
@@ -16,9 +17,14 @@ export async function deliverLead(lead: Lead): Promise<{ delivered: number; fail
       fetch(process.env.SHEETS_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...lead, submittedAt }),
-      }).then((r) => {
-        if (!r.ok) throw new Error(`Sheets ${r.status}`);
+        // An Apps Script web app deployed to "anyone" is a public URL, so the
+        // script rejects posts without this shared token. See docs/lead-delivery.md.
+        body: JSON.stringify({ ...lead, submittedAt, token: process.env.SHEETS_WEBHOOK_TOKEN ?? "" }),
+      }).then(async (r) => {
+        if (!r.ok) throw new Error(`Sheets HTTP ${r.status}`);
+        // Apps Script answers 200 even when it rejects the payload, so read the body.
+        const body = await r.text();
+        if (!body.includes('"ok":true')) throw new Error(`Sheets rejected: ${body.slice(0, 120)}`);
       }),
     );
   }
@@ -43,7 +49,14 @@ export async function deliverLead(lead: Lead): Promise<{ delivered: number; fail
     );
   }
 
+  // No destination configured. In development that is normal: the lead is printed so you
+  // can see it. Anywhere else it means a misconfiguration, and reporting success would
+  // tell a school we had their request when nothing received it, so it counts as a failure.
   if (tasks.length === 0) {
+    if (process.env.NODE_ENV === "production") {
+      console.error("[lead] NO DESTINATION CONFIGURED - lead not delivered:", lead.type);
+      return { delivered: 0, failed: 1 };
+    }
     console.info("[lead] no destinations configured, logging only:", lead);
     return { delivered: 0, failed: 0 };
   }
