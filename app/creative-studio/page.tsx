@@ -47,8 +47,11 @@ export default function CreativeStudioPage() {
           <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {C.services.map((s, i) => {
               const t = toneAt(i);
+              // Seven services leave one card alone on the last row; centre it rather
+              // than stranding it against the left edge.
+              const orphan = C.services.length % 3 === 1 && i === C.services.length - 1;
               return (
-                <li key={s.title} className={`reveal flex flex-col rounded-3xl p-7 ${t.bg}`}>
+                <li key={s.title} className={`reveal flex flex-col rounded-3xl p-7 ${t.bg} ${orphan ? "lg:col-start-2" : ""}`}>
                   <span className={`flex size-14 items-center justify-center rounded-2xl bg-white shadow-card ${t.text}`}>
                     <Icon name={s.icon} className="size-7" />
                   </span>
