@@ -16,6 +16,12 @@ var SHARED_TOKEN = 'CHANGE_ME';
 // One tab per lead type, created on first use.
 var SHEET_PREFIX = 'leads-';
 
+// Who gets an email for every new submission. Comma-separate several addresses.
+// Leave empty to send to the Google account that owns this script.
+// Set NOTIFY to false to switch the emails off.
+var NOTIFY = true;
+var NOTIFY_EMAIL = '';
+
 function doPost(e) {
   try {
     if (!e || !e.postData || !e.postData.contents) {
@@ -66,12 +72,82 @@ function doPost(e) {
     });
 
     sheet.appendRow(row);
-    return json({ ok: true, row: sheet.getLastRow() });
+    var rowNumber = sheet.getLastRow();
+
+    // The row is already saved, so a mail failure must never fail the request.
+    var mailed = notifyOwner(type, headers, row, rowNumber);
+
+    return json({ ok: true, row: rowNumber, mailed: mailed });
   } catch (err) {
     // Logged to the Apps Script execution log, visible under Executions.
     console.error('lead webhook failed: ' + err);
     return json({ ok: false, error: 'server error' });
   }
+}
+
+/**
+ * Emails the owner a summary of the new row. Returns true if the mail was handed to Gmail.
+ * Uses the script owner's Gmail quota (about 100 recipients a day on a free account).
+ */
+function notifyOwner(type, headers, row, rowNumber) {
+  if (!NOTIFY) return false;
+  try {
+    var to = NOTIFY_EMAIL || Session.getEffectiveUser().getEmail();
+    if (!to) return false;
+
+    var book = SpreadsheetApp.getActiveSpreadsheet();
+    var value = function (key) {
+      var i = headers.indexOf(key);
+      return i === -1 ? '' : String(row[i]);
+    };
+
+    var lines = [];
+    var htmlRows = [];
+    headers.forEach(function (key, i) {
+      if (row[i] === '') return;
+      lines.push(key + ': ' + row[i]);
+      htmlRows.push(
+        '<tr><td style="padding:6px 12px 6px 0;color:#545c72;vertical-align:top">' + escapeHtml(key) +
+        '</td><td style="padding:6px 0"><b>' + escapeHtml(String(row[i])) + '</b></td></tr>'
+      );
+    });
+
+    var who = value('schoolName') || value('contactName') || 'website visitor';
+    var subject = 'New ' + type + ' request: ' + who;
+    var sheetUrl = book.getUrl();
+
+    var options = {
+      name: 'Vidyam deAi Website',
+      htmlBody:
+        '<p>A new <b>' + escapeHtml(type) + '</b> request came in from the website.</p>' +
+        '<table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">' +
+        htmlRows.join('') + '</table>' +
+        '<p><a href="' + sheetUrl + '">Open the sheet</a> (row ' + rowNumber + ')</p>'
+    };
+    // Reply goes straight to the person who filled in the form.
+    var replyTo = value('email');
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(replyTo)) options.replyTo = replyTo;
+
+    MailApp.sendEmail(to, subject, lines.join('\n') + '\n\nSheet: ' + sheetUrl + ' (row ' + rowNumber + ')', options);
+    return true;
+  } catch (err) {
+    console.error('lead notification failed: ' + err);
+    return false;
+  }
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/**
+ * Run this once from the editor (select "authorizeMail", click Run) after pasting a new
+ * version of the script. It makes Google ask for the "send email" permission and sends
+ * you a test mail. Without that permission the web app saves rows but cannot email.
+ */
+function authorizeMail() {
+  var to = NOTIFY_EMAIL || Session.getEffectiveUser().getEmail();
+  MailApp.sendEmail(to, 'Vidyam deAi lead emails are switched on', 'This is a test. New website requests will now arrive here.');
 }
 
 /** A GET is only ever a human checking the deployment is alive. */

@@ -48,6 +48,24 @@ first use. Adding a field to the form later adds a column; existing columns keep
 **Deploy → Manage deployments → edit → New version** to publish a change, or the URL will
 keep serving the old code.
 
+### Email to the owner from the same script
+
+`docs/leads-webhook.gs` also emails the script owner's Gmail after every saved row
+(`notifyOwner`). It needs no extra service and no environment variable.
+
+- `NOTIFY_EMAIL` at the top of the script: leave empty to mail the account that owns the
+  script, or set one or more comma-separated addresses. `NOTIFY = false` switches it off.
+- After pasting a version of the script that has this, select **`authorizeMail`** in the
+  editor's function dropdown and click **Run** once. Google then asks for the "send email"
+  permission and sends a test mail. Then publish a **New version** of the deployment.
+- The mail is sent after the row is saved and inside its own `try`, so a mail failure never
+  loses or fails a lead. The web app's reply includes `"mailed": true` or `false`.
+- It uses the owner's Gmail sending quota (roughly 100 recipients a day on a free account).
+- Reply-To is set to the email the visitor typed, so replying answers them directly.
+
+Resend (below) is the alternative for mail from your own domain. Use one or the other, or
+both.
+
 ## 2. Email notification (Resend)
 
 1. Create an account at [resend.com](https://resend.com) and add an API key.

@@ -7,8 +7,8 @@ export const site: SiteConfig = {
     "AI, automation and data skills for students from Class 6 to 12, taught by people who build AI at work, with mental wellbeing built into every class.",
   // TBD: confirm the official domain (docs/content-status.md)
   url: "https://www.vidyamdeai.com",
-  email: null,
-  phone: null,
+  email: "vidyamdeai@gmail.com",
+  phones: ["+91 90077 58858", "+91 79803 60789"],
   whatsapp: null,
   address: null,
   primaryCta: { label: "Book a free AI workshop", href: "/book-workshop" },

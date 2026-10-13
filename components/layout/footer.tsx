@@ -7,10 +7,31 @@ import { Placeholder } from "@/components/shared/placeholder";
 const linkClass = "inline-flex min-h-11 items-center text-navy-100 transition-colors hover:text-gold-300 lg:min-h-9";
 
 export function Footer() {
-  const contacts = [
-    { label: "Email", value: site.email, icon: Mail },
-    { label: "Phone", value: site.phone, icon: Phone },
-    { label: "Address", value: site.address, icon: MapPin },
+  const contactLink = "inline-flex min-h-11 items-center break-all text-white underline-offset-4 hover:text-gold-300 hover:underline lg:min-h-9";
+  const contacts: { label: string; icon: typeof Mail; value: React.ReactNode }[] = [
+    {
+      label: "Email",
+      icon: Mail,
+      value: site.email && (
+        <a href={`mailto:${site.email}`} className={contactLink}>
+          {site.email}
+        </a>
+      ),
+    },
+    {
+      label: "Phone",
+      icon: Phone,
+      value: site.phones.length > 0 && (
+        <span className="flex flex-col">
+          {site.phones.map((p) => (
+            <a key={p} href={`tel:${p.replace(/[^+\d]/g, "")}`} className={contactLink}>
+              {p}
+            </a>
+          ))}
+        </span>
+      ),
+    },
+    { label: "Address", icon: MapPin, value: site.address },
   ];
   return (
     <footer className="on-dark relative overflow-hidden bg-navy-950 text-navy-100">
@@ -49,7 +70,7 @@ export function Footer() {
                     <c.icon className="size-5" aria-hidden="true" />
                   </span>
                   <span className="sr-only">{c.label}: </span>
-                  <span className="text-white">{c.value ?? <Placeholder label={c.label.toLowerCase()} />}</span>
+                  <span className="text-white">{c.value || <Placeholder label={c.label.toLowerCase()} />}</span>
                 </li>
               ))}
             </ul>
