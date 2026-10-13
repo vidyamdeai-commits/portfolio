@@ -64,7 +64,7 @@ export function WorkshopForm() {
 
       <Group step="3" title="The workshop">
         <fieldset aria-describedby={err.classes ? "classes-error" : undefined}>
-          <legend className="text-sm font-medium text-navy-900">Which classes are you interested in?</legend>
+          <legend className="text-sm font-medium text-navy-900">Which classes or groups are you interested in?</legend>
           <div className="mt-2.5 grid gap-2 sm:grid-cols-3">
             {classBands.map((c) => (
               <label

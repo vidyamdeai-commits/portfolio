@@ -31,6 +31,8 @@ export default function HomePage() {
           description: site.description,
           url: site.url,
           logo: `${site.url}/brand/logo-lockup.jpg`,
+          ...(site.email && { email: site.email }),
+          ...(site.phones.length > 0 && { telephone: site.phones[0].replace(/[^+\d]/g, "") }),
         }}
       />
       <Hero {...home.hero} primary={site.primaryCta} aside={<HeroCollage badge={home.offer} />} />

@@ -4,7 +4,7 @@ Every placeholder on the site is listed here. Remove a row when the client suppl
 
 | Item | Where used | Status | Owed by |
 |---|---|---|---|
-| Domain, email, phone, WhatsApp, address | `content/site.ts`, footer, contact | TBD | Client |
+| Domain, WhatsApp, address | `content/site.ts`, footer, contact | TBD (email and two phone numbers supplied 13 Oct 2026) | Client |
 | Logo as SVG | `public/brand/` | TBD (only JPEG) | Client |
 | ~~School range: Class 6–12 vs 5–12~~ | — | **RESOLVED 11 Oct 2026: Classes 6–12.** The school presentation deck says 6–12 throughout; the site was corrected in 9 places | — |
 | Launch scope: school only vs all five verticals | nav, programmes | TBD | Client |

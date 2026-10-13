@@ -11,7 +11,8 @@ export type SiteConfig = {
   description: string;
   url: string;
   email: Maybe<string>;
-  phone: Maybe<string>;
+  /** Display form, e.g. "+91 90077 58858". The tel: link is built from the digits. */
+  phones: string[];
   whatsapp: Maybe<string>;
   address: Maybe<string>;
   primaryCta: Cta;

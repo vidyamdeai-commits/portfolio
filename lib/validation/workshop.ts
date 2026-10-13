@@ -1,6 +1,13 @@
 import { z } from "zod";
 
-export const classBands = ["Class 6–7", "Class 8–9", "Class 10–12"] as const;
+export const classBands = [
+  "Class 3–5",
+  "Class 6–7",
+  "Class 8–9",
+  "Class 10–12",
+  "College",
+  "Working professionals",
+] as const;
 
 export const workshopSchema = z.object({
   schoolName: z.string().trim().min(2, "Please enter your school's name"),
@@ -12,7 +19,7 @@ export const workshopSchema = z.object({
     .trim()
     .regex(/^[+\d][\d\s-]{7,15}$/, "Please enter a valid phone number"),
   city: z.string().trim().min(2, "Please enter your city"),
-  classes: z.array(z.enum(classBands)).min(1, "Pick at least one class group"),
+  classes: z.array(z.enum(classBands)).min(1, "Pick at least one group"),
   students: z.string().trim().optional(),
   hasLab: z.enum(["yes", "no", "not-sure"]).optional(),
   preferredTime: z.string().trim().optional(),
