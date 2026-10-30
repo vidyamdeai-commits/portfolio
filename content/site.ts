@@ -45,7 +45,6 @@ export const footerSections: { title: string; links: NavItem[] }[] = [
       { label: "K–12 Schools", href: "/k12-school" },
       { label: "Higher Education", href: "/higher-education" },
       { label: "FDE Industry Track", href: "/fde-industry-track" },
-      { label: "Partnerships", href: "/partnerships" },
     ],
   },
   {

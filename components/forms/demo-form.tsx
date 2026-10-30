@@ -110,7 +110,7 @@ export function DemoForm({ followUs }: { followUs?: React.ReactNode }) {
           next();
         }
       }}
-      className="on-light rounded-[2rem] bg-white px-5 py-8 text-ink shadow-lift sm:px-10 sm:py-10"
+      className="on-light rounded-[2rem] bg-white px-4 py-6 text-ink shadow-lift sm:px-10 sm:py-10"
     >
       <Progress step={step} />
 
