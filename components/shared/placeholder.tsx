@@ -1,9 +1,10 @@
 /**
  * Marks a value the client has not confirmed yet (see docs/content-status.md).
- * Visible in development and previews; renders the fallback in production.
+ * Visible in development and on Vercel preview deployments. Any other production
+ * build (Vercel or not) renders the fallback, so visitors never see "TBD".
  */
 export function Placeholder({ label, fallback = null }: { label: string; fallback?: React.ReactNode }) {
-  if (process.env.NODE_ENV === "production" && process.env.VERCEL_ENV === "production") {
+  if (process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview") {
     return <>{fallback}</>;
   }
   return (

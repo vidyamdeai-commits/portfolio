@@ -12,7 +12,7 @@ import { teachWithUs } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Teach with us",
   description:
-    "Teach AI, computer science, data and wellbeing to students across Classes 6 to 12, in colleges and in professional batches. Interview, 20-minute demo class and verification.",
+    "Teach AI, computer science, data and wellbeing to students across Classes 3 to 12, in colleges and in professional batches. Interview, 20-minute demo class and verification.",
 };
 
 export default function TeachWithUsPage() {

@@ -27,7 +27,7 @@ export function ButtonLink({
     <Link
       href={href}
       className={cn(
-        "group/btn inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-7 py-3 font-display text-[0.95rem] font-bold transition duration-200",
+        "group/btn inline-flex min-h-12 items-center sm:whitespace-nowrap justify-center gap-2.5 rounded-full px-7 py-3 font-display text-[0.95rem] font-bold transition duration-200",
         styles[variant],
         className,
       )}

@@ -9,9 +9,15 @@ import type { Cta, Feature } from "@/lib/content/types";
 
 export const hero = {
   eyebrow: "About us",
-  title: "Teaching India's students to use AI well, not just quickly",
-  body: "Vidyam deAi teaches AI, automation and data skills from Class 6 through college and into working life, with mental wellbeing built into the programme rather than bolted on. We are new, and we would rather tell you exactly what we are than claim more than we have.",
-  secondary: { label: "See the programmes", href: "/programmes" } satisfies Cta,
+  title: "Human intelligence first. AI for a better future.",
+  body: "Vidyam deAi is an education and technology initiative bridging the gap between what is taught in class and what workplaces now expect, across India. We teach AI from Class 3, through B.Tech, and into industry. We are new, and we would rather tell you exactly what we are than claim more than we have.",
+  secondary: { label: "See our pathways", href: "/k12-school" } satisfies Cta,
+};
+
+/** Spec v2 section 1 and 4.3: the emblem. */
+export const emblem = {
+  title: "Our emblem",
+  body: "A human figure holds up an open book topped by a luminous flame, while circuit-like pathways run through one of its pages. The book and flame stand for knowledge and the human spark; the circuits stand for artificial intelligence. Together they show what we teach: human wisdom and AI working in harmony, with people leading.",
 };
 
 /** The name, which is the clearest statement of what the venture is for. */
@@ -56,7 +62,7 @@ export const values: Feature[] = [
 
 export const doing = {
   title: "What we teach",
-  body: "One learning path, five programmes: school computer science and AI from Class 6 to 12, two college tracks, industry specialisations for working professionals, practical AI for everyday life, and a dedicated Mind & Wellness programme.",
+  body: "One learning path, three pathways: a K–12 curriculum from Class 3 to 12 aligned to CBSE Skill Codes 417 and 843, a four-year B.Tech AI pathway aligned to the AICTE model curriculum, and a Forward Deployed AI Engineer track for industry.",
 };
 
 /** Deliberately honest about what is not settled yet. */
@@ -64,12 +70,12 @@ export const honest = {
   title: "Where we are today",
   items: [
     "We are a new venture, so we do not have student numbers, school logos or testimonials to show you. When we have them, and permission to use them, they will appear here.",
-    "Our first offer to a school is a free one-hour workshop and a demo class, because we would rather you judged us on a real session than on a brochure.",
-    "Fees, durations and batch sizes are confirmed in writing when you enquire.",
+    "Our first offer to every school and college is 1 free orientation session, because we would rather you judged us on a real session than on a brochure.",
+    "Indicative prices are published on our Pricing page. Your final quote is confirmed in writing after the orientation session.",
   ],
 };
 
 export const cta = {
   title: "Come and see a class",
-  body: "The fastest way to know whether we are any good is to watch us teach. Book a free workshop for your school.",
+  body: "The fastest way to know whether we are any good is to watch us teach. Book 1 free orientation session for your school or college.",
 };

@@ -4,50 +4,66 @@ export const site: SiteConfig = {
   name: "Vidyam deAi",
   tagline: "Knowledge · Intelligence · Future",
   description:
-    "AI, automation and data skills for students from Class 6 to 12, taught by people who build AI at work, with mental wellbeing built into every class.",
-  // TBD: confirm the official domain (docs/content-status.md)
+    "Structured AI education for schools, colleges and industry: CBSE-aligned K-12 pathways, a B.Tech AI curriculum and a Forward Deployed AI Engineer track, taught through practical projects.",
   url: "https://www.vidyamdeai.com",
-  email: "vidyamdeai@gmail.com",
-  phones: ["+91 90077 58858", "+91 79803 60789"],
-  whatsapp: null,
-  address: null,
-  primaryCta: { label: "Book a free AI workshop", href: "/book-workshop" },
+  email: "contact@vidyamdeai.com",
+  phones: ["+91 79803 60789"],
+  whatsapp: "+91 79803 60789",
+  address: "88/4, Lal Bahadur Sastri Rd, near Konnagar Railway Station, Rammohan Place, Konnagar, West Bengal 712235",
+  primaryCta: { label: "Book Free Demo", href: "#demo" },
+  // TBD: official page URLs (client). Buttons stay hidden until these are set.
+  social: { linkedin: null, facebook: null },
 };
 
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "For Schools", href: "/for-schools" },
-  { label: "Colleges & Students", href: "/for-colleges" },
-  { label: "For Industry", href: "/for-industry" },
-  { label: "Creative Studio", href: "/creative-studio" },
-  { label: "About", href: "/about" },
+  { label: "K–12 Schools", href: "/k12-school" },
+  { label: "Higher Ed", href: "/higher-education" },
+  { label: "FDE Track", href: "/fde-industry-track" },
+  { label: "Partnerships", href: "/partnerships" },
+  {
+    label: "Unique Add-ons",
+    href: "/creative-studio",
+    children: [
+      { label: "Creative Studio", href: "/creative-studio" },
+      { label: "Mind & Wellness", href: "/programmes/mind-and-wellness" },
+      { label: "AI for Everyday Life", href: "/programmes/everyday-ai" },
+      { label: "How We Teach", href: "/how-we-teach" },
+      { label: "Teach With Us", href: "/teach-with-us" },
+    ],
+  },
+  { label: "About Us", href: "/about" },
 ];
 
 /**
- * The footer, not the nav, is what keeps every page reachable. The four-division nav
- * has no room for the individual programmes, How We Teach or Teach With Us, so they
- * live here. AI for Everyday Life and Mind & Wellness stay live at their own URLs
- * (owner decision, 11 Oct 2026) even though they are no longer top-level.
+ * The footer keeps every page reachable. Unique add-ons are featured prominently per client instruction.
  */
 export const footerSections: { title: string; links: NavItem[] }[] = [
   {
     title: "Programmes",
     links: [
-      { label: "School (Class 6 to 12)", href: "/programmes/school" },
-      { label: "College", href: "/programmes/college" },
-      { label: "Industry", href: "/programmes/industry" },
-      { label: "AI for Everyday Life", href: "/programmes/everyday-ai" },
-      { label: "Mind & Wellness", href: "/programmes/mind-and-wellness" },
-      { label: "All programmes", href: "/programmes" },
+      { label: "K–12 Schools", href: "/k12-school" },
+      { label: "Higher Education", href: "/higher-education" },
+      { label: "FDE Industry Track", href: "/fde-industry-track" },
+      { label: "Partnerships", href: "/partnerships" },
     ],
   },
   {
-    title: "Explore",
+    title: "Company",
     links: [
+      { label: "About Us", href: "/about" },
+      { label: "Partnerships", href: "/partnerships" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    title: "Unique Add-ons",
+    links: [
+      { label: "Mind & Wellness", href: "/programmes/mind-and-wellness" },
+      { label: "AI for Everyday Life", href: "/programmes/everyday-ai" },
+      { label: "Creative Studio", href: "/creative-studio" },
       { label: "How We Teach", href: "/how-we-teach" },
       { label: "Teach With Us", href: "/teach-with-us" },
-      { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" },
     ],
   },
 ];

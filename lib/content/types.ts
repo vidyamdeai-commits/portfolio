@@ -16,6 +16,7 @@ export type SiteConfig = {
   whatsapp: Maybe<string>;
   address: Maybe<string>;
   primaryCta: Cta;
+  social: { linkedin: Maybe<string>; facebook: Maybe<string> };
 };
 
 export type NavItem = { label: string; href: string; children?: NavItem[] };

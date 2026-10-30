@@ -20,7 +20,7 @@ export const divisions: Division[] = [
     icon: "school",
     title: "For Schools",
     href: "/for-schools",
-    body: "Thinking skills, creativity, responsible AI and digital wellbeing for Classes 6 to 12.",
+    body: "Thinking skills, creativity, responsible AI and digital wellbeing for Classes 3 to 12.",
     focus: "Thinking skills, creativity, responsible AI and digital wellbeing",
     customers: "Schools, teachers, parents",
     cta: "Discuss a school workshop",

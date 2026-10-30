@@ -6,6 +6,7 @@ import { MobileMenu } from "@/components/layout/mobile-menu";
 import { ButtonLink } from "@/components/shared/button-link";
 import { Container } from "@/components/shared/container";
 import { Icon } from "@/components/shared/icon";
+import { SocialLinks } from "@/components/shared/social-links";
 import { toneAt } from "@/lib/theme";
 
 const linkClass =
@@ -15,7 +16,7 @@ const childIcons = ["school", "college", "industry", "everyday", "wellness"];
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-white shadow-[0_1px_0_0_rgb(11_27_69/0.08),0_8px_24px_-16px_rgb(11_27_69/0.25)]">
+    <header className="sticky top-0 z-40 bg-white shadow-[0_1px_0_0_rgb(15_23_42/0.08),0_8px_24px_-16px_rgb(15_23_42/0.25)]">
       <div className="on-dark bg-navy-950 text-white">
         <Container>
           <Link
@@ -33,9 +34,12 @@ export function Header() {
 
       <Container className="flex h-[4.5rem] items-center justify-between gap-4">
         <Link href="/" className="flex min-h-11 items-center gap-2.5" aria-label={`${site.name} home`}>
-          <Image src="/brand/logo-mark.png" alt="" width={42} height={43} priority className="h-[43px] w-[42px] rounded-xl ring-1 ring-navy-900/10" />
-          <span className="font-serif text-2xl leading-none tracking-tight text-navy-900">
-            Vidyam de<span className="text-gold-800">Ai</span>
+          <Image src="/brand/logo-mark.png" alt="" width={47} height={48} priority className="h-12 w-[47px] rounded-xl ring-1 ring-navy-900/10" />
+          <span className="flex flex-col">
+            <span className="font-serif text-2xl font-bold leading-none tracking-tight text-navy-900">
+              Vidyam de<span className="text-gold-700">Ai</span>
+            </span>
+            <span className="mt-1 hidden text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-muted sm:block">{site.tagline}</span>
           </span>
         </Link>
 
@@ -76,7 +80,8 @@ export function Header() {
           )}
         </nav>
 
-        <div className="ml-auto hidden md:block xl:ml-0">
+        <div className="ml-auto hidden items-center gap-3 md:flex xl:ml-0">
+          <SocialLinks className="hidden 2xl:flex" />
           <ButtonLink href={site.primaryCta.href} className="min-h-11 whitespace-nowrap px-5 py-2 shadow-[0_4px_0_0_var(--color-gold-700)]">
             {site.primaryCta.label}
           </ButtonLink>

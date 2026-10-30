@@ -10,7 +10,7 @@ export const hero = {
   eyebrow: "How we teach",
   title: "Learn by building, in the format that suits you",
   body: "Every module ends with something the learner has made, not just notes they have taken. Classes run in school, after school, on campus or online, and the same curriculum and the same standards apply whichever one you choose.",
-  secondary: { label: "See the programmes", href: "/programmes" } satisfies Cta,
+  secondary: { label: "See our pathways", href: "/" } satisfies Cta,
 };
 
 /** The six delivery formats, brochure section 06. */
