@@ -98,17 +98,17 @@ export function DemoModal() {
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] bg-navy-900 p-6 text-white shadow-2xl ring-1 ring-white/15 sm:p-10">
+      <div className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] bg-navy-900 p-4 text-white shadow-2xl ring-1 ring-white/15 sm:p-8">
         <button
           type="button"
           onClick={close}
-          className="absolute right-5 top-5 flex size-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+          className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-6 sm:top-6 sm:size-11"
           aria-label="Close demo booking"
         >
           <X className="size-5" aria-hidden="true" />
         </button>
 
-        <div className="pr-10">
+        <div className="p-2 sm:p-3 pr-10 sm:pr-12">
           <span className="label inline-block text-gold-300">Complimentary 1-hour session</span>
           <h2 id="demo-modal-title" className="mt-2 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
             Book a <span className="text-gold-300">free demo</span>
@@ -118,7 +118,7 @@ export function DemoModal() {
           </p>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-4 sm:mt-6">
           <DemoForm />
         </div>
       </div>
