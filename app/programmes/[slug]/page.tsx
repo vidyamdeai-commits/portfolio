@@ -201,7 +201,7 @@ async function ProgrammeContent({ params }: Pick<PageProps<"/programmes/[slug]">
         )}
       </section>
 
-      <CtaBand title="Ready to start?" body="Tell us a little about you and we'll get back within two working days." cta={p.cta} />
+      <CtaBand title="Ready to start?" body="Tell us a little about you and we'll get back within one working day." cta={p.cta} />
     </>
   );
 }

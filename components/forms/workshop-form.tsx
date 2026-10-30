@@ -20,7 +20,7 @@ export function WorkshopForm() {
           Thank you, we&apos;ve got your request
         </h2>
         <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-muted">
-          Our team will call you within two working days to fix a date for your free AI workshop.
+          Our team will call you within one working day to fix a date for your free AI workshop.
         </p>
       </div>
     );

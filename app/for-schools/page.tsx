@@ -26,7 +26,7 @@ import { toneAt } from "@/lib/theme";
 export const metadata: Metadata = {
   title: "For Schools",
   description:
-    "An after-school AI, automation and data programme for Classes 6 to 12, with wellbeing built in. Book a free 1-hour AI workshop for your school.",
+    "An after-school AI, automation and data programme for Classes 3 to 12, with wellbeing built in. Book a free 1-hour AI workshop for your school.",
 };
 
 export default function ForSchoolsPage() {
@@ -53,7 +53,7 @@ export default function ForSchoolsPage() {
         <Container>
           <SectionHeading
             eyebrow="Curriculum"
-            title="A clear pathway from Class 6 to 12"
+            title="A clear pathway from Class 3 to 12"
             body="Each strand grows harder every year. Every class ends with a real project students can show."
           />
           <div className="mt-10 rounded-[2rem] bg-sky-100 p-4 sm:p-8">

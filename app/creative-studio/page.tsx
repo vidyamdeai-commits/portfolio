@@ -58,7 +58,7 @@ export default function CreativeStudioPage() {
                   <h3 className="mt-6 font-display text-xl font-bold leading-snug text-navy-900">{s.title}</h3>
                   <p className="mt-2.5 flex-1 leading-relaxed text-ink/80">{s.body}</p>
                   <p className="mt-5 text-sm font-medium text-ink/70">
-                    <span className="label block text-ink/60">For</span>
+                    <span className="label block text-ink/80">For</span>
                     {s.customers}
                   </p>
                 </li>

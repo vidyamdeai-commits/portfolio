@@ -2,24 +2,24 @@
 
 /* Brand tokens, sampled from the Vidyam deAi logo, plus tints for colour-block sections */
 @theme {
-  --color-navy-950: #061131;
-  --color-navy-900: #0b1b45;
-  --color-navy-800: #142a5e;
-  --color-navy-700: #1f3a78;
-  --color-navy-100: #e3e8f4;
-  --color-gold-500: #c9a24a;
-  --color-gold-400: #e0b955;
-  --color-gold-300: #f2cf70;
-  --color-gold-700: #8a6a1f; /* gold that passes AA as text on cream-50 */
-  --color-gold-800: #74581a; /* gold for small text, AA on cream and sun tints */
-  --color-cream-50: #fcfbf6;
-  --color-cream-100: #f6f2e6;
-  --color-cream-200: #ebe4cf;
-  --color-ink: #1b2236;
-  --color-muted: #545c72;
+  --color-navy-950: #020617;
+  --color-navy-900: #0f172a; /* spec: Executive Navy */
+  --color-navy-800: #1e293b;
+  --color-navy-700: #334155;
+  --color-navy-100: #e2e8f0;
+  --color-gold-500: #d97706; /* spec: Luminous Gold */
+  --color-gold-400: #d97706; /* button fill (spec Luminous Gold): navy text on it is 5.6:1 */
+  --color-gold-300: #fbbf24; /* gold text on navy */
+  --color-gold-700: #b45309; /* spec deep gold, AA as text on white and slate-50 */
+  --color-gold-800: #92400e; /* gold for small text, AA on slate and sun tints */
+  --color-cream-50: #ffffff;
+  --color-cream-100: #f8fafc; /* spec: Soft Tint Slate */
+  --color-cream-200: #e2e8f0;
+  --color-ink: #1e293b;
+  --color-muted: #475569; /* spec: Muted Charcoal */
 
   /* Section and card tints. The -700 shades pass AA as text on their own -100 tint. */
-  --color-sun-100: #fdf0c8;
+  --color-sun-100: #fef3c7;
   --color-sky-100: #e4edff;
   --color-sky-700: #2449b0;
   --color-mint-100: #dcf5e7;
@@ -32,10 +32,11 @@
   --font-display: var(--font-jakarta), system-ui, sans-serif;
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow-card: 0 1px 2px rgb(11 27 69 / 0.06), 0 12px 32px -12px rgb(11 27 69 / 0.18);
-  --shadow-lift: 0 2px 4px rgb(11 27 69 / 0.08), 0 24px 48px -16px rgb(11 27 69 / 0.28);
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.06), 0 12px 32px -12px rgb(15 23 42 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.08), 0 24px 48px -16px rgb(15 23 42 / 0.28);
 }
 
 html {
@@ -86,7 +87,7 @@ body {
   }
 
   .dots-dark {
-    background-image: radial-gradient(rgb(11 27 69 / 0.12) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgb(15 23 42 / 0.12) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
   }
 }

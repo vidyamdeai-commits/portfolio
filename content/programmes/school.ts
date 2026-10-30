@@ -4,9 +4,9 @@ export const school: Programme = {
   slug: "school",
   vertical: "school",
   number: "01",
-  title: "AI & Computer Science, Class 6 to 12",
+  title: "AI & Computer Science, Class 3 to 12",
   shortTitle: "School",
-  audience: "Students from Class 6 to Class 12",
+  audience: "Students from Class 3 to Class 12",
   summary: "Four stages, from talking to AI to building an agentic capstone.",
   intro:
     "A step-by-step path that complements school-board computer science and AI syllabi. Delivered in school, after school or online.",

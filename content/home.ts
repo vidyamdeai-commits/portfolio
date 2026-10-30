@@ -1,19 +1,55 @@
 import type { Feature, Step } from "@/lib/content/types";
 
-/**
- * The homepage now speaks to all four divisions, so the headline is the brand
- * positioning rather than the school pitch. The primary call to action is still the
- * free school workshop, which remains the main conversion.
- */
+/** Homepage hero, from spec v2 section 4.2 (29 Oct 2026). */
 export const hero = {
   eyebrow: "Knowledge · Intelligence · Future",
-  title: "Human intelligence first, AI for a better future",
-  body: "Learn, innovate, create and grow with responsible artificial intelligence — from school learning and college projects to business solutions and creative content.",
-  secondary: { label: "See what students learn", href: "/for-schools" },
+  title: "AI learning that fits your goals",
+  accent: "fits your goals",
+  body: "Structured education. Practical projects. Personalised learning for a changing world.",
+  primary: { label: "Book 1 Free Orientation Session", href: "/contact" },
+  secondary: { label: "Explore the curriculum", href: "/k12-school" },
 };
 
-/** Top-of-page strip and hero badge. Restates the primary offer. */
-export const offer = "Free 1-hour AI workshop for your school";
+/** Hero badge (spec: "1 FREE ORIENTATION SESSION"). */
+export const badge = "1 free orientation session: a complimentary first step for every school and college";
+
+export const shareText = "Vidyam deAi: structured AI education for schools, colleges and industry";
+
+/** Spec v2 "Operational Solutions" (About), reused as the homepage differentiators. */
+export const pillars: Feature[] = [
+  {
+    icon: "rocket",
+    title: "Level-0 cold-start bridge",
+    body: "A 15-hour Term 1 orientation bootcamp, so every learner starts from the same footing.",
+  },
+  {
+    icon: "lab",
+    title: "100% in-lab practice",
+    body: "Every session is scheduled, hands-on practical work in the lab, not slides.",
+  },
+  {
+    icon: "users",
+    title: "Resident AI instructors",
+    body: "Full-time instructors on campus, certified through our 60-hour Train-the-Trainer bootcamp.",
+  },
+  {
+    icon: "git",
+    title: "Industry mentors, real portfolios",
+    body: "Working engineers mentor learners, and every capstone ends up on a clean public GitHub profile.",
+  },
+];
+
+/** Spec v2 Partnerships: 4-step pilot framework, preceded by the free orientation. */
+export const startSteps: Step[] = [
+  { title: "Free orientation", body: "One complimentary session for your students or faculty." },
+  { title: "Define", body: "We agree the goals, learners and success measures for a pilot." },
+  { title: "Agree", body: "Scope, schedule and commercial model are fixed in writing." },
+  { title: "Evaluate", body: "The pilot runs in your lab and is assessed against the agreed measures." },
+  { title: "Review", body: "We review results together and plan the full rollout." },
+];
+
+/** Top-of-page strip. Restates the primary offer. */
+export const offer = "1 free orientation session for every school and college";
 
 export const differentiators: Feature[] = [
   {
@@ -24,7 +60,7 @@ export const differentiators: Feature[] = [
   {
     icon: "route",
     title: "Step-by-step pathway",
-    body: "A clear curriculum from Class 6 to 12 that grows harder each year.",
+    body: "A clear curriculum from Class 3 to 12 that grows harder each year.",
   },
   {
     icon: "hammer",

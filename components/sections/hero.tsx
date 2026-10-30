@@ -7,8 +7,12 @@ import { Kicker } from "@/components/shared/kicker";
 import type { Cta } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
-/** Splits a headline at its first comma so the second clause can take the accent colour. */
-function splitTitle(title: string) {
+/**
+ * Splits a headline so its closing words can take the accent colour: at `accent` when
+ * given (it must end the title), otherwise at the first comma.
+ */
+function splitTitle(title: string, accent?: string) {
+  if (accent && title.endsWith(accent)) return [title.slice(0, -accent.length).trimEnd(), accent];
   const at = title.indexOf(", ");
   return at === -1 ? [title] : [title.slice(0, at + 1), title.slice(at + 2)];
 }
@@ -52,6 +56,7 @@ export function HeroCollage({ badge }: { badge?: string }) {
 export function Hero({
   eyebrow,
   title,
+  accent,
   body,
   primary,
   secondary,
@@ -60,13 +65,15 @@ export function Hero({
 }: {
   eyebrow: string;
   title: string;
+  /** Closing words of the title to show in gold. */
+  accent?: string;
   body: string;
   primary: Cta;
   secondary?: Cta;
   aside?: React.ReactNode;
   size?: "display" | "long";
 }) {
-  const [lead, tail] = splitTitle(title);
+  const [lead, tail] = splitTitle(title, accent);
   return (
     <section className="on-dark relative overflow-hidden bg-navy-900 text-white">
       <div aria-hidden="true" className="dots absolute inset-0" />

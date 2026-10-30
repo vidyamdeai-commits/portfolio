@@ -4,7 +4,12 @@ import {
   Briefcase,
   CalendarDays,
   Database,
+  FlaskConical,
   Flower2,
+  GitBranch,
+  Handshake,
+  Layers,
+  Rocket,
   GraduationCap,
   Hammer,
   Hand,
@@ -49,6 +54,12 @@ const icons: Record<string, LucideIcon> = {
   question: CircleQuestionMark,
   check: SearchCheck,
   decide: Scale,
+  // spec v2
+  lab: FlaskConical,
+  git: GitBranch,
+  handshake: Handshake,
+  layers: Layers,
+  rocket: Rocket,
 };
 
 export function Icon({ name, className }: { name?: string; className?: string }) {

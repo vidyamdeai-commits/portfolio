@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Info } from "lucide-react";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FeatureGrid } from "@/components/sections/feature-grid";
@@ -8,12 +9,12 @@ import { JsonLd } from "@/components/shared/json-ld";
 import { Kicker } from "@/components/shared/kicker";
 import { Placeholder } from "@/components/shared/placeholder";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { about, site } from "@/lib/content";
+import { about, home, site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Vidyam deAi teaches AI, automation and data skills from Class 6 through college and working life, with mental wellbeing built into the programme.",
+    "Vidyam deAi bridges classroom learning and workplace AI skills across India: K–12, B.Tech and an industry engineering track, taught through practical lab work.",
 };
 
 export default function AboutPage() {
@@ -50,6 +51,20 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section className="pt-16 sm:pt-24">
+        <Container>
+          <div className="reveal grid items-center gap-8 overflow-hidden rounded-[2rem] bg-cream-100 p-8 sm:p-12 lg:grid-cols-[auto_1fr] lg:gap-14">
+            <div className="mx-auto w-48 rounded-[2rem] bg-white p-6 shadow-card sm:w-60">
+              <Image src="/brand/logo-mark.png" alt="The Vidyam deAi emblem: a human figure holding an open book topped by a flame, with circuit lines" width={620} height={640} className="h-auto w-full" />
+            </div>
+            <div>
+              <h2 className="font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">{about.emblem.title}</h2>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink">{about.emblem.body}</p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section className="py-16 sm:py-24">
         <Container className="grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="reveal rounded-[2rem] bg-sky-100 p-8 sm:p-10 lg:col-span-6">
@@ -60,9 +75,24 @@ export default function AboutPage() {
           <div className="reveal rounded-[2rem] bg-mint-100 p-8 sm:p-10 lg:col-span-6">
             <h2 className="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">{about.doing.title}</h2>
             <p className="mt-4 leading-relaxed text-ink">{about.doing.body}</p>
-            <ButtonLink href="/programmes" variant="navy" className="mt-7">
-              See all five programmes
+            <ButtonLink href="/pricing" variant="navy" className="mt-7">
+              See pricing
             </ButtonLink>
+          </div>
+        </Container>
+      </section>
+
+      <section className="on-dark relative overflow-hidden bg-navy-900 py-16 sm:py-24">
+        <div aria-hidden="true" className="dots absolute inset-0" />
+        <Container className="relative">
+          <SectionHeading
+            tone="light"
+            eyebrow="How we operate"
+            title="Built for real campuses"
+            body="The practical choices that make our programmes work inside a school or college timetable."
+          />
+          <div className="mt-12">
+            <FeatureGrid items={home.pillars.slice(0, 3)} tone="dark" />
           </div>
         </Container>
       </section>
