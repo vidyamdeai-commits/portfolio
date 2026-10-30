@@ -35,3 +35,4 @@ Rejected while sourcing, and why, so the same ground is not covered twice:
 The Industry programme hero has **no photo**. Nothing on Pexels was both India-set and face-free for a workplace scene, so that page uses the `WorkflowMock` illustration in `components/sections/mock-screens.tsx` instead (owner's instruction, 11 Oct 2026).
 
 Unused files left in `public/images/` (not referenced by any page; safe to delete): `student-laptop-above.webp`, `workshop-audience.webp`.
+
